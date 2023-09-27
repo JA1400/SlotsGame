@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Lobster&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="normalize.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.js"
+        integrity="sha512-dMiBqqEV5i3KqpAdsgQSSZ72DnNib7otY0X+b/Tnn1EmLym1dxuZ19csdZqBnfDniKd9bmNtzStQzuMrIa5Ngw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body class="d-flex">
+    <div class="container d-flex">
+        <div class="cards b-box start-card d-flex ">
+            <h2>Welcome to my game of <span>SLOTS!</span></h2>
+            <h3>Hit Play to get started or click the About button to learn more about this project!</h3>
+            <button class="card-btns">Play</button>
+            <button class="card-btns">About</button>
+        </div>
+        <div class="cards b-box start-card d-flex card-flipped">
+            <h2>About <span>SLOTS!</span></h2>
+            <div class="proj-desc d-flex">
+                <h3>After looking at different games I could code with JS, I ended up trying to replicate a slot
+                    machine.
+                    I had done a few games now like hangman, tic-tac-toe, and rock-paper-scissors, but I wanted to test
+                    what I could do with vanilla JS, while also keeping browser performance in mind. I think I managed
+                    to do just that with this game. The randomizer for the icons, I feel, compliments the project and
+                    really makes it feel like a slot machine; despite being very easy for the user to win. Made entirely
+                    with just vanilla JS, HTML, and CSS, I
+                    present to you, Slots!</h3>
+            </div>
+            <button class="card-btns">Back</button>
+        </div>
+        <div class="top-piece d-flex b-box">
+            <div id="title-text" class="d-flex">
+                <h2>SLOTS</h2>
+            </div>
+        </div>
+        <div class="game-piece">
+            <div class="d-flex" id="gp-wrapper">
+                <div class="info-group" id="jackpot-total">
+                    <h3>JACKPOT</h3>
+                    <div class="game-nums">0</div>
+                </div>
+                <div class="slots d-flex b-box">
+                    <div id="reel-w-light" class="d-flex">
+                        <div class="b-box tester-light"></div>
+                        <div class="reel b-box"></div>
+                    </div>
+                    <div id="reel-w-light" class="d-flex">
+                        <div class="b-box tester-light"></div>
+                        <div class="reel b-box"></div>
+                    </div>
+                    <div id="reel-w-light" class="d-flex">
+                        <div class="b-box tester-light"></div>
+                        <div class="reel b-box"></div>
+                    </div>
+                </div>
+                <div class="bet-info d-flex b-box">
+                    <!-- bet -->
+                    <div class="info-group d-flex">
+                        <p>Bet</p>
+                        <div class="game-nums">0</div>
+                    </div>
+                    <!-- winnings -->
+                    <div class="info-group">
+                        <p>Winnings</p>
+                        <div class="game-nums">0</div>
+                    </div>
+                    <!-- credit -->
+                    <div class="info-group">
+                        <p>Credit</p>
+                        <div class="game-nums">0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="button-holder d-flex b-box">
+            <img id="btn-area" src="images/TestBottomPartv3.png" alt="button-area">
+            <div class="btn-screen d-flex b-box">
+                <button class="bet game-btn"><span>
+                        <h4>info</h4>
+                    </span></button>
+                <button class="bet game-btn"><span>
+                        <h4>Bet -</h4>
+                    </span></button>
+                <button class="bet game-btn"><span>
+                        <h4>Bet +</h4>
+                    </span></button>
+                <button id="play" class="game-btn"><span>
+                        <h4>Spin!</h4>
+                    </span></button>
+            </div>
+        </div>
+        <div class="bottom-piece b-box">
+            <div class="game-music">
+                <label class="switch">
+                    <input id="music-toggle" type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+        <div class="cards b-box d-flex card-hidden">
+            <div class="pay-table b-box d-flex">
+                <div class="table-column d-flex">
+                    <!-- <div class="win-option win-option-0 d-flex">
+                        <img src="images/resizedIcons/casino v2.png" alt="7 icon"
+                            class="icon-fitter win-table-i hidden-icon">
+                    </div> -->
+                    <div class="win-option win-option-1 d-flex">
+                        <img src="images/resizedIcons/casino v2.png" alt="7 icon" class="icon-fitter win-table-i">
+                        <img src="images/resizedIcons/casino v2.png" alt="7 icon" class="icon-fitter win-table-i">
+                        <img src="images/resizedIcons/casino v2.png" alt="7 icon" class="icon-fitter win-table-i">
+                    </div>
+                    <div class="win-option win-option-2 d-flex">
+                        <img src="images/resizedIcons/bar (1).png" alt="bar icon" class="icon-fitter win-table-i">
+                        <img src="images/resizedIcons/bar (1).png" alt="bar icon" class="icon-fitter win-table-i">
+                        <img src="images/resizedIcons/bar (1).png" alt="bar icon" class="icon-fitter win-table-i">
+                    </div>
+                    <div class="win-option win-option-3 d-flex">
+                        <img src="images/resizedIcons/cherries.png" alt="cherry icon" class="icon-fitter win-table-i">
+                        <img src="images/resizedIcons/cherries.png" alt="cherry icon" class="icon-fitter win-table-i">
+                        <img src="images/resizedIcons/cherries.png" alt="cherry icon" class="icon-fitter win-table-i">
+                    </div>
+                    <div class="win-option win-option-4 d-flex">
+                        <img src="images/resizedIcons/Any.png" alt="cherry icon" class="icon-fitter win-table-i c-icon">
+                        <img src="images/resizedIcons/Any 2.png" alt="cherry icon"
+                            class="icon-fitter win-table-i c-icon">
+                        <img src="images/resizedIcons/Any.png" alt="cherry icon" class="icon-fitter win-table-i c-icon">
+                    </div>
+                    <div class="win-option win-option-5 d-flex">
+                        <img src="images/resizedIcons/casino v2.png" alt="7 icon" class="group-of-4 win-table-i">
+                        <img src="images/resizedIcons/casino v2.png" alt="7 icon" class="group-of-4 win-table-i">
+                        <img src="images/resizedIcons/bar (1).png" alt="bar icon" class="group-of-4 win-table-i">
+                        <img src="images/resizedIcons/bar (1).png" alt="bar icon" class="group-of-4 win-table-i">
+                        <h6>or</h6>
+                    </div>
+                    <div class="win-option win-option-6 d-flex">
+                        <img src="images/resizedIcons/cherries.png" alt="cherry icon" class="group-of-2 win-table-i">
+                        <img src="images/resizedIcons/cherries.png" alt="cherry icon" class="group-of-2 win-table-i">
+                    </div>
+                    <div class="win-option win-option-7 d-flex">
+                        <img src="images/resizedIcons/cherries.png" alt="cherry icon" class="win-table-i">
+                    </div>
+                </div>
+                <div class="win-options table-column d-flex">
+                    <div class="win-option d-flex">
+                        <h5>x1</h5>
+                    </div>
+                    <div class="win-option d-flex">
+                        <h5>100</h5>
+                    </div>
+                    <div class="win-option d-flex">
+                        <h5>50</h5>
+                    </div>
+                    <div class="win-option d-flex">
+                        <h5>25</h5>
+                    </div>
+                    <div class="win-option d-flex">
+                        <h5>15</h5>
+                    </div>
+                    <div class="win-option d-flex">
+                        <h5>10</h5>
+                    </div>
+                    <div class="win-option d-flex">
+                        <h5>5</h5>
+                    </div>
+                    <div class="win-option d-flex win-option-7">
+                        <h5>2</h5>
+                    </div>
+                </div>
+                <div class="win-options table-column d-flex">
+                    <div class="win-option alternate-border d-flex">
+                        <h5 class="multi-win-num">Cur(x1)</h5>
+                    </div>
+                    <div class="win-option alternate-border d-flex">
+                        <h5 class="multi-win-num">100</h5>
+                    </div>
+                    <div class="win-option alternate-border d-flex">
+                        <h5 class="multi-win-num">50</h5>
+                    </div>
+                    <div class="win-option alternate-border d-flex">
+                        <h5 class="multi-win-num">25</h5>
+                    </div>
+                    <div class="win-option alternate-border d-flex">
+                        <h5 class="multi-win-num">15</h5>
+                    </div>
+                    <div class="win-option alternate-border d-flex">
+                        <h5 class="multi-win-num">10</h5>
+                    </div>
+                    <div class="win-option alternate-border d-flex">
+                        <h5 class="multi-win-num">5</h5>
+                    </div>
+                    <div class="win-option alternate-border d-flex win-option-7">
+                        <h5 class="multi-win-num">2</h5>
+                    </div>
+                </div>
+            </div>
+            <button class="card-btns">Back</button>
+        </div>
+        <div class="cards b-box end-card d-flex card-hidden">
+            <h3>You Lose!</h3>
+            <button class="card-btns" id="end-btn">Play Again</button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
